@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman Jabeen | Digital Marketer &amp; Web Developer</title>
+    <script>
+      // Single Page Application redirect for GitHub Pages
+      // Converts subpaths back into the root or hash so the SPA loads without a 404
+      (function() {
+        var pathSegments = window.location.pathname.split('/').filter(Boolean);
+        // If hosted on https://<user>.github.io/<repo>/, preserve repo segment
+        var repoName = pathSegments.length > 0 ? pathSegments[0] : '';
+        var isGitHubPages = window.location.hostname.endsWith('github.io');
+        var basePath = isGitHubPages && repoName ? '/' + repoName + '/' : '/';
+        
+        // If visiting a subpath without hash, redirect to base with hash
+        var subpath = isGitHubPages ? pathSegments.slice(1).join('/') : pathSegments.join('/');
+        var target = basePath;
+        if (subpath) {
+          target += '#' + subpath;
+        }
+        if (window.location.search) {
+          target += window.location.search;
+        }
+        window.location.replace(target);
+      })();
+    </script>
+  </head>
+  <body>
+    <p style="font-family: sans-serif; text-align: center; margin-top: 50px; color: #5b21b6;">
+      Loading Aman Jabeen portfolio...
+    </p>
+  </body>
+</html>
